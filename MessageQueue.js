@@ -49,8 +49,7 @@ export class MessageQueue {
             queue,
             (msg) => {
                 const stringifiedMessage = msg.content.toString();
-                const parsedMessage = JSON.parse(stringifiedMessage);
-                callback(parsedMessage);
+                callback(stringifiedMessage);
             },
             { noAck: true },
         );
